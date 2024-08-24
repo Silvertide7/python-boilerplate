@@ -1,4 +1,4 @@
-.PHONY: init run test run_docker .poetry_check
+.PHONY: init run test run_docker .poetry_check lint
 
 .DEFAULT_GOAL := init
 
@@ -19,7 +19,12 @@ test:
 	poetry run pytest tests
 
 run:
-	poetry run python -m magic_demo
+	poetry run python -m src/magic_demo
 
-run:
-	poetry run python -m magic_demo
+lint:
+	poetry run ruff check src/
+	poetry run ruff check tests/
+
+format:
+	poetry run ruff format src/
+	poetry run ruff format tests/

@@ -7,7 +7,7 @@ WORKDIR /magic_demo
 RUN apt-get update && apt-get install unzip -y
 
 COPY makefile /magic_demo
-COPY ./magic_demo /magic_demo
+COPY src/magic_demo /magic_demo
 COPY ./tests /magic_demo/tests
 COPY poetry.lock pyproject.toml /magic_demo/
 
