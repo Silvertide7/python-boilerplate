@@ -16,10 +16,10 @@ poetry.lock: pyproject.toml
 	@touch $@
 
 test:
-	poetry run pytest tests \
-	--junit-xml=./tests/.test/coverage/junit.xml \
-	--numprocesses=1 \
-	-m 'not integration'
+	poetry run pytest tests
+
+run:
+	poetry run python -m magic_demo
 
 run:
 	poetry run python -m magic_demo

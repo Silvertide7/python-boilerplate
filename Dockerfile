@@ -9,5 +9,9 @@ RUN apt-get update && apt-get install unzip -y
 COPY makefile /magic_demo
 COPY ./magic_demo /magic_demo
 COPY ./tests /magic_demo/tests
+COPY poetry.lock pyproject.toml /magic_demo/
+
+RUN POETRY_VIRTUALENVS_CREATE=false poetry install
+
 
 CMD ["make", "test"]

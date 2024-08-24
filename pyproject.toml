@@ -9,6 +9,9 @@ packages = [{include = "magic_demo"}]
 [tool.poetry.dependencies]
 python = "^3.12.2"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
