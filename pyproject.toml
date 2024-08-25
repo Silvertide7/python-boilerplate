@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Silvertide7 <natephillips801@gmail.com>"]
 readme = "README.md"
-packages = [{include = "magic_demo"}]
+packages = [{include = "src/magic_demo"}]
 
 [tool.poetry.dependencies]
 python = "^3.12.2"
