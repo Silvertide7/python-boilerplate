@@ -1,4 +1,4 @@
-.PHONY: init run test run_docker .poetry_check lint .pre_commit_install
+.PHONY: init run test run_docker .poetry_check lint .pre_commit_install docker_build docker_run
 
 .DEFAULT_GOAL := init
 
@@ -36,3 +36,9 @@ format:
 type_check:
 	poetry run mypy --strict src/
 	poetry run mypy --strict tests/
+
+docker_build:
+	docker build -t python-boilerplate .
+
+docker_run:
+	docker run -d -p 4000:80 python-boilerplate
