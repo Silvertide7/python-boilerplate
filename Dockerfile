@@ -13,6 +13,7 @@ ENV PYTHONFAULTHANDLER=1 \
 RUN apt-get update && apt-get upgrade -y \
   && apt-get install --no-install-recommends -y \
     curl \
+    make \
   # Installing `poetry` package manager:
   # https://github.com/python-poetry/poetry
   && curl -sSL 'https://install.python-poetry.org' | python - \
@@ -29,14 +30,13 @@ WORKDIR /sample_project
 
 # Copy files
 COPY makefile /sample_project/
-COPY src/sample_project /sample_project/
-COPY ./tests /sample_project/tests
+COPY src /sample_project/src/
+COPY ./tests/ /sample_project/tests
 COPY poetry.lock pyproject.toml /sample_project/
 
 # Project initialization:
 # hadolint ignore=SC2046
-RUN --mount=type=cache,target="$POETRY_CACHE_DIR" \
-  && poetry --version \
+RUN poetry --version \
   && poetry install
 
 CMD ["make", "test"]
