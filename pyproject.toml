@@ -4,10 +4,11 @@ version = "0.1.0"
 description = ""
 authors = ["Silvertide7 <natephillips801@gmail.com>"]
 readme = "README.md"
-packages = [{include = "src/magic_demo"}]
+packages = [{include = "src/"}]
 
 [tool.poetry.dependencies]
 python = "^3.12.2"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.2"

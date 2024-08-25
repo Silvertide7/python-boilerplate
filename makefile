@@ -1,4 +1,4 @@
-.PHONY: init run test run_docker .poetry_check lint .pre_commit_install docker_build docker_run
+.PHONY: init run test run_docker .poetry_check lint .pre_commit_install docker_build docker_start
 
 .DEFAULT_GOAL := init
 
@@ -23,7 +23,7 @@ test:
 	poetry run pytest tests
 
 run:
-	poetry run python -m src/magic_demo
+	poetry run python -m src
 
 lint:
 	poetry run ruff check src/
@@ -40,5 +40,8 @@ type_check:
 docker_build:
 	docker build -t python-boilerplate .
 
-docker_run:
+docker_start:
 	docker run -d -p 4000:80 python-boilerplate
+
+docker_run:
+	poetry run python -m src
