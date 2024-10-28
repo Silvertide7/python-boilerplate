@@ -33,6 +33,6 @@ followed by
 
 `make docker_run`
 
-This will build a new docker image and fire it up and run our extensive test suite in docker, which ensures that 1 does in fact equal 1 and 2 = 1 + 1.
+This will build a new docker image and fire it up and run our extensive test suite in docker, which ensures that 1 does in fact equal 1 and 2 == 1 + 1.
 
-There is also a pre commit hook added using the `pre-commit` library that runs the linter and formatter and will stop you from committing if anything is wrong.
+There is also a pre commit hook added using the `pre-commit` library that runs the linter and formatter and will stop the commit and warn you if there are any linter errors or formatting changes it detected.
