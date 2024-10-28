@@ -21,3 +21,4 @@ modules.json
 .pre_commit_install
 poetry.lock
 .poetry_check
+.venv
